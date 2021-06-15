@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepht -type d | wc -l
+find . -not -path '. ..' -type d | wc -l
