@@ -5,6 +5,9 @@
 x=1
 while [ $x -le 10 ]
 do
+    if [[ $x == 10 ]]; then
+        echo "Hi"
+    fi
     echo "Best School"
     ((x++))
 done
