@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Displays the PID, process name - Bash word
+# Display "To infinity and beyond" each 2 sec
 
 x=1
 while [ $x ]

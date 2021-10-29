@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Displays the PID, process name - Bash word
+# Kill process
 
 kill "$(pgrep -f 4-to_infinity_and_beyond)"
