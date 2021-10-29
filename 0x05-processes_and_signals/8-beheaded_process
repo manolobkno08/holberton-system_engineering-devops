@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# SIGKILL
+
+pkill -SIGKILL -f 7-highlander
