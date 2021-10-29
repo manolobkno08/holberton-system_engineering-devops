@@ -4,6 +4,6 @@
 my_path='./*'
 for files in $my_path
 do
-    my_file=$(basename $files | cut -b 3-50)
+    my_file=$(basename "$files" | cut -b 3-)
     echo "$my_file"
 done
