@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Display contents LS
+
+my_path='./*'
+for files in $my_path
+do
+    my_file=$(basename $files | cut -b 3-50)
+    echo "$my_file"
+done
