@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Ping an IP address passed as an argument
 
-x=$1
+x="$1"
 
 if [[ $x ]]; then
 	ping -c 5 $x
