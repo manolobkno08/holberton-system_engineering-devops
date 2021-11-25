@@ -1,0 +1,41 @@
+Distributed web infrastructure:
+You should be able to explain some of the details of this infrastructure:
+    - For each additional element, why you are adding it.
+        a proxy server is added to work distributing requests based on the http and tsp protocol.
+        It will be in charge of balancing the loads between the 2 servers.
+
+    - What distribution algorithm is your load balancer configured with and how does it work?
+        The algorithm is called Round-robin:
+            - Round-Robin: requests are distributed among servers cyclically, regardless of server load. It distributes the
+            requests evenly but not the load.
+            - Weighted Round-Robin: Requests are delivered depending on the weight given to each server.
+            - LeastConnection: Each request is served by the server with the least active connections at that time.
+            - Weighted LeastConnection: Requests are delivered depending on the weight and number of connections.
+
+    - Does your load balancer allow active-active or active-passive configuration?
+        Our load balancer is configured in active-active mode:
+            - Active-active solutions implement two or more active system instances and can be used to improve scalability
+            and provide high availability. In active-active deployments, all instances handle requests at the same time.
+            - Active-passive solutions implement an active instance that handles requests and a passive instance that is on standby.
+
+    - How does a primary-replica (master-slave) database cluster work?
+        Master-slave synchronization allows data to be replicated from one database server to other servers. When data is replicated,
+        one server acts as the master server and the remaining servers act as slaves.
+
+    - What is the difference between the primary node and the replica node with respect to the application?
+        The difference is that the primary node is in charge of receiving the information, and the replica node is in charge of
+        replicating the database of the primary node.
+
+
+You should be able to explain what the issues are with this infrastructure:
+    - Where are the SPOF
+        This type of infrastructure does not have a firewall to filter malicious requests or malwares.
+    - Security issues:
+        There are no firewalls and no SSL server certificates are used to securely protect our private data, such as credit cards and
+        online payments.
+    - Security issues (no firewall, no HTTPS)
+    - No monitoring:
+        There is no monitoring tool such as application or server monitoring, i.e. there are no statistics on how the resources
+        of each server are being managed and functioning.
+
+Infrastructure Design: https://imgur.com/gallery/aWoAL0T
