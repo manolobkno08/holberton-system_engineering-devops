@@ -7,3 +7,4 @@ file {'/tmp':
   group   => 'www-data',
   content => 'I love Puppet',
 }
+
