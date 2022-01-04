@@ -1,6 +1,6 @@
 # Kill process:
 
-exec {
-  pkill -HUP 'killmenow',
+exec { 'killmenow':
+  command => 'pkill',
 }
 
