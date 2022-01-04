@@ -1,6 +1,6 @@
 # Kill process:
 
-exec { 'killmenow':
+exec {
   pkill => 'killmenow',
 }
 
