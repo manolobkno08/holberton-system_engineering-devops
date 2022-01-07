@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# NGINX
+
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt install nginx -y
+sudo ufw allow 'Nginx HTTP'
+
+new_string="\\\thostname magm.tech;\n\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;"
+path='/etc/nginx/sites-available/default_test'
+sed -i "24i $new_string" $path
+
+sudo service nginx restart
