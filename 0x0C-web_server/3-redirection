@@ -8,5 +8,5 @@ sudo ufw allow 'Nginx HTTP'
 new_string="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
 path='/etc/nginx/sites-available/default'
 sed -i "47i $new_string" $path
-sudo service nginx start
+sudo service nginx restart
 
