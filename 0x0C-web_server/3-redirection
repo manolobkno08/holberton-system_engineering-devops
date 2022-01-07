@@ -1,14 +1,12 @@
 #!/usr/bin/env bash
-# NGINX
+# Redirect configuration
 
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt install nginx -y
 sudo ufw allow 'Nginx HTTP'
-
 new_string="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
 path='/etc/nginx/sites-available/default'
 sed -i "47i $new_string" $path
-
 sudo service nginx start
 
