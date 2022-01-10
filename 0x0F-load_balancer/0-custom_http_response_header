@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo service nginx start
+
+newhttp="\\\tadd_header X-Served-By \$hostname;\n"
+sudo sed -i "34i $newhttp" /etc/nginx/sites-available/default
+
+sudo service nginx restart
+sudo service nginx reload
