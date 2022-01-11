@@ -10,13 +10,13 @@ exec { 'update' :
   require => Exec['update'],
 }
 -> file_line { 'Add redirection, 301' :
-  ensure => present,
+  ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
   after  => 'listen 80 defatul_server;',
   line   => 'rewrite ^/redirect_me https://www.linkedin.com/in/manuel-alejandro-gomez-883951120/ permanent;',
 }
 -> file_line { 'custom http server' :
-  ensure => present,
+  ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
   after  => 'listen 80 defatul_server;',
   line   => $hname,
