@@ -1,9 +1,9 @@
 # Add a custom HTTP header with Puppet
 
-$hname="add_header X-Served-By ${hostname};";
+$hname="add_header X-Served-By ${hostname};"
 
 exec { 'update' :
-  command => '/user/bin/apt-get update',
+  command => '/usr/bin/apt-get update',
 }
 -> package { 'nginx' :
   ensure  => installed,
@@ -24,7 +24,7 @@ exec { 'update' :
 -> file { '/var/www/html/index.html' :
   content => 'Hello World',
 }
--> services { 'nginx' :
+-> service { 'nginx' :
   ensure  => running,
   require => Package['nginx'],
 }
