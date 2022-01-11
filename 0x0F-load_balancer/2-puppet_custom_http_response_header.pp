@@ -15,7 +15,7 @@ exec { 'update' :
   after  => 'listen 80 defatul_server;',
   line   => 'rewrite ^/redirect_me https://www.linkedin.com/in/manuel-alejandro-gomez-883951120/ permanent;',
 }
--> file_line { 'custom http server' :
+-> file_line { 'Add custom HTTP server' :
   ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
   after  => 'listen 80 defatul_server;',
@@ -25,6 +25,6 @@ exec { 'update' :
   content => 'Hello World',
 }
 -> services { 'nginx' :
-  ensure  => 'running',
+  ensure  => running,
   require => Package['nginx'],
 }
