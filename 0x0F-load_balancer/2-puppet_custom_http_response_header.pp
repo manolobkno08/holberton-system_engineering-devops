@@ -9,7 +9,7 @@ exec { 'update' :
   ensure  => installed,
   require => Exec['update'],
 }
--> file_line { 'redirection' :
+-> file_line { 'Add redirection, 301' :
   ensure => present,
   path   => '/etc/nginx/sites-available/default',
   after  => 'listen 80 defatul_server;',
