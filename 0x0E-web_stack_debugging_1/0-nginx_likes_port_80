@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# NGINX FIXED
+
+sudo service nginx stop
+
+sudo rm /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+sudo service nginx reload
+sudo service nginx start
