@@ -6,11 +6,8 @@ sudo pkill -9 apache2
 
 conf="/etc/nginx/nginx.conf";
 
-# Set owner
-sudo chown -R nginx $conf
-
 # Set owner permissions
-sudo chmod o-rwx $conf
+sudo chmod 644 $conf
 
 # User nginx enable
 new_user="user nginx;";
