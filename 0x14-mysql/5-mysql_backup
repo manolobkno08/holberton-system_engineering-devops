@@ -2,4 +2,4 @@
 # Backup
 sudo mysqldump -u root -p "$1" --all-databases > backup.sql
 # Compress file
-sudo tar -zcvf "$(date '+%d-%m-%Y').tar.gz" backup.sql
+sudo tar -czf "$(date '+%d-%m-%Y').tar.gz" backup.sql
