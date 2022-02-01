@@ -20,7 +20,8 @@ def run():
         u_id = user.get('id')
         task_list = [{"username": user.get('username'),
                       "task": task.get('title'),
-                      "completed": task.get('completed')} for task in tasks if u_id == task.get('userId')]
+                      "completed": task.get('completed')
+                      } for task in tasks if u_id == task.get('userId')]
         new_dict[u_id] = task_list
 
     filename = 'todo_all_employees.json'
