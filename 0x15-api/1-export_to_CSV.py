@@ -9,7 +9,7 @@ from sys import argv
 
 
 def run():
-    """ Return users by tasks completed successfully"""
+    """ Export data to CSV """
     u_id = argv[1]
 
     url = 'https://jsonplaceholder.typicode.com/'
