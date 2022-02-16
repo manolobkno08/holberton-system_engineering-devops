@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from cmath import e
 import requests
+"""Reddit API"""
 
 
 def number_of_subscribers(subreddit):
