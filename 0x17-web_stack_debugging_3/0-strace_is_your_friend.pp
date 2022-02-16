@@ -1,3 +1,4 @@
+# Puppet bug fixed
 include stdlib
 file_line { 'debug':
 	ensure  => present,
