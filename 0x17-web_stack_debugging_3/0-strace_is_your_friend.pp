@@ -1,8 +1,5 @@
-# Puppet bug fixed
-include stdlib
-file_line { 'debug':
-  ensure => present,
-  path   => '/var/www/html/wp-settings.php',
-  line   => 'require_once( ABSPATH . WPINC . '/class-wp-locale.php' );',
-  match  => 'require_once( ABSPATH . WPINC . '/class-wp-locale.phpp' );',
+# Fiz error 500 Internal server error
+exec { 'fix-wordpress':
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+  path    => '/usr/local/bin/:/bin/'
 }
